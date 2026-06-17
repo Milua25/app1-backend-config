@@ -1,21 +1,21 @@
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: ecr-cronjob-secret-manager-role
-rules:
-- apiGroups: [""] # The core API group
-  resources: ["secrets"]
-  verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: ecr-cronjob-secret-manager-binding
-subjects:
-- kind: ServiceAccount
-  name: ecr-cronjob-secret-manager-sa
-  namespace: app1-ns
-roleRef:
-  kind: Role
-  name: ecr-cronjob-secret-manager-role
-  apiGroup: rbac.authorization.k8s.io
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: Role
+# metadata:
+#   name: ecr-cronjob-secret-manager-role
+# rules:
+# - apiGroups: [""] # The core API group
+#   resources: ["secrets"]
+#   verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: RoleBinding
+# metadata:
+#   name: ecr-cronjob-secret-manager-binding
+# subjects:
+# - kind: ServiceAccount
+#   name: ecr-cronjob-secret-manager-sa
+#   namespace: app1-ns
+# roleRef:
+#   kind: Role
+#   name: ecr-cronjob-secret-manager-role
+#   apiGroup: rbac.authorization.k8s.io
