@@ -15,6 +15,6 @@
 #     spec:
 #       containers:
 #         - name: backend
-#           image: cloudwithvarjosh/app1-backend:v1.0.0
+#           image: 247069422203.dkr.ecr.us-east-2.amazonaws.com/argocd-demo-backend-ecr:v1.0.1
 #           ports:
 #             - containerPort: 5000
