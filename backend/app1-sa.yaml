@@ -1,4 +1,4 @@
-# apiVersion: v1
-# kind: ServiceAccount
-# metadata:
-#   name: ecr-cronjob-secret-manager-sa
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecr-cronjob-secret-manager-sa

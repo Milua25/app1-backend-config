@@ -1,24 +1,24 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: backend
-#   namespace: app1-ns
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: backend
-#   template:
-#     metadata:
-#       labels:
-#         app: backend
-#     spec:
-#       containers:
-#         - name: backend
-#           image: 247069422203.dkr.ecr.us-east-2.amazonaws.com/argocd-demo-backend-ecr:v1.0.1
-#           ports:
-#             - containerPort: 5000
-#           imagePullPolicy: Always
-#       # Tell Kubernetes to use the auto-renewing secret
-#       imagePullSecrets:
-#       - name: ecr-registry-secret
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: app1-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: 247069422203.dkr.ecr.us-east-2.amazonaws.com/argocd-demo-backend-ecr:v1.0.1
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+      # Tell Kubernetes to use the auto-renewing secret
+      imagePullSecrets:
+      - name: ecr-registry-secret
